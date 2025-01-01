@@ -245,16 +245,6 @@ const About = () => {
         {/* Floating Card with Arrow */}
         <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'text-left pl-8 pr-4 md:pl-8 md:pr-12 order-2' : 'text-right pr-8 pl-4 md:pl-12 md:pr-8 order-1'}`}>
           <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-6 hover:scale-105 transition-transform duration-300 ease-in-out">
-            
-            {/* Arrow */}
-            <div
-              className={`absolute top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-transparent ${
-                index % 2 === 0
-                  ? 'border-r-8 border-gray-200 dark:border-gray-700 -left-4'
-                  : 'border-l-8 border-gray-200 dark:border-gray-700 -right-4'
-              }`}
-            ></div>
-
             {/* Card Content */}
             <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
             <h4 className="text-sm md:text-md text-gray-600 dark:text-gray-300 font-medium">
