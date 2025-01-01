@@ -188,78 +188,79 @@ const About = () => {
         </div>
       </section>
       {/* Experience Timeline */}
-  <section className="mt-12 px-4 md:px-0">
-  <h2 className="text-3xl font-bold text-center text-gray-200 dark:text-white mb-12">My Experience</h2>
+<section className="mt-12 px-4 md:px-0">
+  <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">My Experience</h2>
   <div className="relative flex flex-col items-center">
+
     {/* Vertical Line */}
     <div className="absolute w-1 bg-blue-500 h-full left-1/2 transform -translate-x-1/2"></div>
 
     {/* Timeline Items */}
-    {[
-      {
-        id: 1,
-        title: 'Associate Engineer → Senior Software Engineer',
-        company: 'KPIT Technologies',
-        location: 'Pune, India',
-        duration: '2016 - 2021',
-        description: 'Built software solutions for automotive technologies, optimized systems, and delivered key projects across multiple teams.',
-        icon: <FaGraduationCap />,
-      },
-      {
-        id: 2,
-        title: 'Senior Data Analyst → Data Scientist',
-        company: 'Tiger Analytics',
-        location: 'Remote, India',
-        duration: '2021 - 2023',
-        description: 'Worked on advanced analytics projects, built predictive models, and provided data-driven insights for clients.',
-        icon: <FaBriefcase />,
-      },
-      {
-        id: 3,
-        title: 'Senior Analyst',
-        company: 'United Airlines',
-        location: 'Remote, India',
-        duration: '2023 - Present',
-        description: 'Leading data analysis initiatives to optimize operational efficiency and deliver actionable insights across teams.',
-        icon: <FaCode />,
-      },
-    ].map((item, index) => (
-      <motion.div
-        key={item.id}
-        className={`relative flex flex-col md:flex-row items-center mb-16 w-full`}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.8 }}
-        transition={{ duration: 0.8, delay: index * 0.2 }}
-      >
-        {/* Year Display */}
-        <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'text-right pr-4 md:pr-8 order-1' : 'text-left pl-4 md:pl-8 order-2'}`}>
-          <p className="text-gray-400 dark:text-gray-500 text-md font-medium">{item.duration}</p>
-        </div>
-
-        {/* Icon */}
-        <div className="w-12 h-12 bg-white dark:bg-gray-800 border-2 border-blue-500 rounded-full flex items-center justify-center shadow-md absolute md:left-1/2 transform md:-translate-x-1/2 z-10">
-          {item.icon}
-        </div>
-
-        {/* Floating Card with Arrow */}
-        <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'text-left pl-8 pr-4 md:pl-8 md:pr-12 order-2' : 'text-right pr-8 pl-4 md:pl-12 md:pr-8 order-1'}`}>
-          <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-6 hover:scale-105 transition-transform duration-300 ease-in-out">
-            {/* Card Content */}
-            <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
-            <h4 className="text-sm md:text-md text-gray-600 dark:text-gray-300 font-medium">
-              {item.company} — {item.location}
-            </h4>
-            <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
+      {[
+        {
+          id: 1,
+          title: 'Associate Engineer → Senior Software Engineer',
+          company: 'KPIT Technologies',
+          location: 'Pune, India',
+          duration: '2016 - 2021',
+          description: 'Built software solutions for automotive technologies, optimized systems, and delivered key projects across multiple teams.',
+          icon: <FaGraduationCap />,
+        },
+        {
+          id: 2,
+          title: 'Senior Data Analyst → Data Scientist',
+          company: 'Tiger Analytics',
+          location: 'Remote, India',
+          duration: '2021 - 2023',
+          description: 'Worked on advanced analytics projects, built predictive models, and provided data-driven insights for clients.',
+          icon: <FaBriefcase />,
+        },
+        {
+          id: 3,
+          title: 'Senior Analyst',
+          company: 'United Airlines',
+          location: 'Remote, India',
+          duration: '2023 - Present',
+          description: 'Leading data analysis initiatives to optimize operational efficiency and deliver actionable insights across teams.',
+          icon: <FaCode />,
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={item.id}
+          className={`relative flex flex-col md:flex-row items-center mb-16 w-full`}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+        >
+          {/* Year Display */}
+          <div className={`w-full md:w-1/2 mb-4 md:mb-0 ${index % 2 === 0 ? 'text-right pr-4 md:pr-8 order-1' : 'text-left pl-4 md:pl-8 order-2'}`}>
+            <p className="text-gray-400 dark:text-gray-500 text-sm md:text-md font-medium">{item.duration}</p>
           </div>
-        </div>
-      </motion.div>
-    ))}
-  </div>
 
-  {/* Horizontal Bar Below Timeline */}
-  <div className="w-full mt-12 h-1 bg-gradient-to-r from-blue-400 to-purple-500"></div>
-  </section>
+          {/* Icon */}
+          <div className="w-10 h-10 md:w-12 md:h-12 bg-white dark:bg-gray-800 border-2 border-blue-500 rounded-full flex items-center justify-center shadow-md absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+            {item.icon}
+          </div>
+
+          {/* Floating Card */}
+          <div className={`w-full md:w-1/2 mt-4 md:mt-0 ${index % 2 === 0 ? 'text-left pl-4 md:pl-8 order-2' : 'text-right pr-4 md:pr-8 order-1'}`}>
+            <div className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-4 md:p-6 hover:scale-105 transition-transform duration-300 ease-in-out">
+              {/* Card Content */}
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
+              <h4 className="text-sm md:text-md text-gray-600 dark:text-gray-300 font-medium">
+                {item.company} — {item.location}
+              </h4>
+              <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-1">{item.description}</p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Horizontal Bar Below Timeline */}
+    <div className="w-full mt-12 h-1 bg-gradient-to-r from-blue-400 to-purple-500"></div>
+    </section>
     </div>
   );
 };

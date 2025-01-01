@@ -15,3 +15,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media (max-width: 768px) {
+  .timeline-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .timeline-year {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-icon {
+    margin-bottom: 0.5rem;
+  }
+}
